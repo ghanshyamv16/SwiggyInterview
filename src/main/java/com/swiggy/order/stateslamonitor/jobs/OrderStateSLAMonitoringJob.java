@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.swiggy.order.stateslamonitor.service.IMonitorOrderStateSlaService;
 
+// Run each minutes
 public class OrderStateSLAMonitoringJob extends BaseJob {
 
 	@Autowired

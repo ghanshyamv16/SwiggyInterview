@@ -3,6 +3,9 @@ package com.swiggy.order.stateslamonitor.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+// A shared pojo between publisher and consumer 
+// should be shared in a base library by producer
+// All saying, A common contract needed here
 public class OrderStateChangeEventSRO implements Serializable {
 
 	/**

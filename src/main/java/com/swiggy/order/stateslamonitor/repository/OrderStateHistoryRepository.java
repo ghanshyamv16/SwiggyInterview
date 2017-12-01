@@ -14,4 +14,6 @@ public interface OrderStateHistoryRepository extends JpaRepository<OrderStateHis
 	@Query("from OrderStateHisotry where monitoringProcessed=false")
 	public Set<OrderStateHisotry> findAllUnMonitoringOrderStateHistories();
 
+	public Set<OrderStateHisotry> findByOrderCode(String orderCode);
+
 }

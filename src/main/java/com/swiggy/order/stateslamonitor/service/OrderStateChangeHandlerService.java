@@ -7,13 +7,12 @@ import org.springframework.stereotype.Service;
 
 import com.swiggy.order.stateslamonitor.dto.OrderStateChangeEventSRO;
 import com.swiggy.order.stateslamonitor.entity.OrderStateHisotry;
-import com.swiggy.order.stateslamonitor.rabbitmq.OrderStateChangeListener;
 import com.swiggy.order.stateslamonitor.repository.OrderStateHistoryRepository;
 
 @Service
 public class OrderStateChangeHandlerService implements IOrderStateChangeHandlerService {
 	
-	private static Logger logger = LoggerFactory.getLogger(OrderStateChangeListener.class);
+	private static Logger logger = LoggerFactory.getLogger(OrderStateChangeHandlerService.class);
 
 	@Autowired
 	private OrderStateHistoryRepository orderstateHistoryRepository;
@@ -30,5 +29,4 @@ public class OrderStateChangeHandlerService implements IOrderStateChangeHandlerS
 		orderStateHistory = new OrderStateHisotry(stateChangeEventSro.getOrderCode(), stateChangeEventSro.getCurrentState(), stateChangeEventSro.getStateChangeTime());
 		orderstateHistoryRepository.save(orderStateHistory);
 	}
-
 }
